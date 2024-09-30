@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f2dce2 !important;
+  font-family: 'Open Sans' !important;
+}
+
+.container {
+  max-width: 1700px !important;
+}
+
+.Textarea-Edit {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Textarea-Edit2 {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Textarea-Edit2 textarea {
+  border: none !important;
+  box-shadow: none !important;
+  resize: none;
+}
+
+.btn-padding-right {
+  padding-right: 15px !important; 
+}
+
+.Textarea-Edit textarea {
+  border: none !important;
+  box-shadow: none !important;
+  resize: none;
+}
+
+
+#Receive-Code:focus {
+  box-shadow: none !important;
+}
+
+.btn-danger {
+  background-color: #ff2d55 !important;
+}
+
+.navbar-brand {
+  padding-left: 3px; /* Adjust as needed */
+}
+
+.custom-padding {
+  padding-left: 20px; /* Adjust as needed */
+}
+
+
+.profile {
+  display: flex;
+  flex-direction: column; /* Stack the photo and info vertically */
+  align-items: center; /* Center the items */
+  margin-top: 20px; /* Add space above the profile section */
+}
+
+.container2 {
+  max-width: 800px; /* Set a max width for the container */
+  margin: auto; /* Center the container */
+  padding: 20px; /* Add some padding */
+  text-align: center; /* Center text for the entire container */
+}
+
+.container3 {
+  max-width: 800px; /* Set a max width for the container */
+  margin: auto; /* Center the container */
+  padding: 20px; /* Add some padding */
+  text-align: center; /* Center text for the entire container */
+}
+
+
+
+.profile-photo {
+  border-radius: 50%; /* Make the image circular */
+  width: 100px; /* Set width */
+  height: 100px; /* Set height */
+  object-fit: cover; /* Ensure the image covers the entire circle */
+  border: 2px solid #ccc; /* Optional: add a border for better visibility */
+  margin-bottom: 10px; /* Space between photo and text */
+}
+
+.input-shadow {
+  border: none !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+}
+
