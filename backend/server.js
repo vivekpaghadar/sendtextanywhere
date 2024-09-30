@@ -1,5 +1,6 @@
 const express = require('express');
-const { MongoClient } = require('mongodb');
+// const { MongoClient } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors');
 
 const PORT = 3001;
@@ -9,7 +10,6 @@ const Cryptr = require('cryptr');
 const cryptr = new Cryptr('SendTextAnywhere5105');
 
 const path = require("path");
-require("./")
 
 // Middleware
 // To allow cross-origin requests from React frontend
@@ -22,9 +22,17 @@ app.use(cors({
 })); 
 
 // Connection URI
-const uri = 'mongodb://localhost:27017/';
+const uri = 'mongodb+srv://vivekpaghadar14:Vivek5105@sendtextanywhere.bvuwz.mongodb.net/?retryWrites=true&w=majority&appName=sendtextanywhere';
+
 // Create a new MongoClient
-const client = new MongoClient(uri);
+// const client = new MongoClient(uri);
+const client = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
 
 // POST methode
 app.get("/", (req, res) => {
@@ -37,6 +45,8 @@ app.post("/addtext", async (req, res) => {
     try {
         // Connect to the MongoDB server
         await client.connect();
+        await client.db("admin").command({ ping: 1 });
+        console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
         // Select a database (will be created if it doesn't exist)
         const database = client.db('artista');
