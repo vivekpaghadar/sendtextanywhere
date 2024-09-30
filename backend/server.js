@@ -2,7 +2,7 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
 
-const PORT = 8000;
+const PORT = 3001;
 const app = express();
 
 const Cryptr = require('cryptr');
