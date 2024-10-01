@@ -17,9 +17,7 @@ app.use(express.json()); // To parse JSON body in POST requests
 const _dirname = path.dirname("")
 const buildpath = path.join(_dirname,"../frontend/build")
 app.use(express.static(buildpath));
-app.use(cors({
-    "origin" : "*"
-})); 
+app.use(cors()); 
 
 // Connection URI
 const uri = 'mongodb+srv://vivekpaghadar14:Vivek5105@sendtextanywhere.bvuwz.mongodb.net/?retryWrites=true&w=majority&appName=sendtextanywhere';
@@ -45,8 +43,8 @@ app.post("/addtext", async (req, res) => {
     try {
         // Connect to the MongoDB server
         await client.connect();
-        await client.db("admin").command({ ping: 1 });
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+        //await client.db("admin").command({ ping: 1 });
+        //console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
         // Select a database (will be created if it doesn't exist)
         const database = client.db('artista');

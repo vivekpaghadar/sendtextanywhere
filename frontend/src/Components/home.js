@@ -2,6 +2,7 @@ import { useState } from 'react';
 import QRCode from "react-qr-code";
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css';
+import send2 from '../send2.png';
 
 
 const Home = () => {
@@ -167,7 +168,7 @@ const Home = () => {
                   <div className='mb-3'>
                     <textarea spellCheck={false} className="form-control" id="text" name='note' rows="11" placeholder='Write Your Text Here...' onChange={noteChange} value={Text}></textarea>
                   </div>
-                  <button type="submit" className="btn btn-danger col-2 me-3"><img src='./send2.png' style={{ height: '20px', width: '20px',filter: 'brightness(0) invert(1)'}}></img> Send</button>
+                  <button type="submit" className="btn btn-danger col-2 me-3"><img src={send2} style={{ height: '20px', width: '20px',filter: 'brightness(0) invert(1)'}}></img> Send</button>
                 </form>
               </div>
             </div>
