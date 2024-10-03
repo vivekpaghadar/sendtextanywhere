@@ -10,6 +10,7 @@ const ContectUs = () => {
   const [name, setName] = useState(''); // State for name
   const [phone, setPhone] = useState(''); // State for phone
   const [note, setNote] = useState(''); // State for feedback
+  const [loading, setLoading] = useState(false);
 
   // Handle change for the name field
   const handleNameChange = (event) => {
@@ -35,11 +36,12 @@ const ContectUs = () => {
     } else {
       let data = {
         person_name: name,
-        phone:phone,
-        note:note
+        phone: phone,
+        note: note
       };
-  
+
       // Send the data using fetch
+      setLoading(true);
       try {
         const response = await fetch(addfeedback, {
           method: 'POST', // Set the method to POST
@@ -48,16 +50,20 @@ const ContectUs = () => {
           },
           body: JSON.stringify(data) // Convert the data to a JSON string
         });
-  
+
         const result = await response.json(); // Parse the JSON response from the server
         console.log('Server response:', result);
+        setLoading(false);
+        document.getElementById('Form-addText').reset();
         setName("");
         setPhone("");
         setNote("");
-        document.getElementById('Form-addText').reset();
-        alert('Feedback sent successfully');
+        setTimeout(() => {
+          alert('Feedback sent successfully');
+        }, 100);
       } catch (error) {
         console.error('Error sending data:', error);
+        setLoading(false);
       }
     }
 
@@ -102,7 +108,18 @@ const ContectUs = () => {
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <button onClick={handleSend} type="submit" className="btn btn-danger col-2">Submit</button>
+        <button onClick={handleSend} type="submit" className="btn btn-danger col-2" disabled={loading}>
+          {loading ? (
+            <div className="spinner-border spinner-border-sm" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          ) : (
+            <>
+              Submit
+            </>
+          )}
+          
+        </button>
       </div>
     </div>
   );

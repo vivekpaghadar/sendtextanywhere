@@ -22,6 +22,8 @@ app.use(cors());
 // Connection URI
 const uri = 'mongodb+srv://vivekpaghadar14:Vivek5105@sendtextanywhere.bvuwz.mongodb.net/?retryWrites=true&w=majority&appName=sendtextanywhere';
 
+// const uri = 'mongodb://localhost:27017';
+
 // Create a new MongoClient
 // const client = new MongoClient(uri);
 const client = new MongoClient(uri, {

@@ -19,6 +19,9 @@ const Home = () => {
   const [Text, setText] = useState("");
   const [netText, setnetText] = useState("");
   const [ViewType, setViewType] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
+
 
 
   const FromSend = async (event) => {
@@ -35,7 +38,8 @@ const Home = () => {
       message: text
     };
 
-    // Send the data using fetch
+
+    setLoading(true);
     try {
       const response = await fetch(addText, {
         method: 'POST', // Set the method to POST
@@ -54,7 +58,14 @@ const Home = () => {
       document.getElementById('Form-addText').reset();
     } catch (error) {
       console.error('Error sending data:', error);
+    } finally {
+      setLoading(false);
     }
+
+    // Send the data using fetch
+
+
+
 
   }
 
@@ -74,6 +85,7 @@ const Home = () => {
     };
 
     // Send the data using fetch
+    setLoading2(true);
     try {
       const response = await fetch(getText, {
         method: 'POST', // Set the method to POST
@@ -94,6 +106,8 @@ const Home = () => {
       document.getElementById('Form-getText').reset();
     } catch (error) {
       console.error('Error sending data:', error);
+    } finally {
+      setLoading2(false);
     }
 
   }
@@ -102,7 +116,7 @@ const Home = () => {
     setText(e.target.value);
   }
 
-  const handleReply = (event) =>{
+  const handleReply = (event) => {
     event.preventDefault();
   }
 
@@ -176,7 +190,27 @@ const Home = () => {
                   <div className='mb-3'>
                     <textarea spellCheck={false} className="form-control" id="text" name='note' rows="11" placeholder='Write Your Text Here...' onChange={noteChange} value={Text}></textarea>
                   </div>
-                  <button type="submit" className="btn btn-danger col-2 me-3"><img src={send2} style={{ height: '20px', width: '20px',filter: 'brightness(0) invert(1)'}}></img> Send</button>
+
+
+                  <button type="submit" className="btn btn-danger col-2 me-3" disabled={loading}>
+                    {loading ? (
+                      <div className="spinner-border spinner-border-sm" role="status">
+                        <span className="sr-only">Loading...</span>
+                      </div>
+                    ) : (
+                      <>
+                        <img
+                          src={send2}
+                          style={{ height: '20px', width: '20px', filter: 'brightness(0) invert(1)' }}
+                          alt="Send"
+                        />
+                        Send
+                      </>
+                    )}
+                  </button>
+
+
+                  {/* <button type="submit" className="btn btn-danger col-2 me-3"><img src={send2} style={{ height: '20px', width: '20px',filter: 'brightness(0) invert(1)'}}></img> Send</button> */}
                 </form>
               </div>
             </div>
@@ -213,8 +247,19 @@ const Home = () => {
             <div className="me-2">
               <input type="text" className="form-control input-shadow" id="Receive-Code" name='receive_code' placeholder='Receive Code' maxLength="4" />
             </div>
-            <button type="submit" className="btn btn-danger">
-              <i className="fa-solid fa-download"></i>
+            <button type="submit" className="btn btn-danger" disabled={loading2}>
+              
+
+              {loading2 ? (
+                <div className="spinner-border spinner-border-sm" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              ) : (
+                <>
+                  <i className="fa-solid fa-download"></i>
+                </>
+              )}
+
             </button>
           </div>
         </form>
