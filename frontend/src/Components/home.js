@@ -4,6 +4,14 @@ import { Tooltip as ReactTooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css';
 import send2 from '../send2.png';
 
+//localhost
+// const addText = 'http://localhost:3001/addtext';
+// const getText = 'http://localhost:3001/gettext';
+
+//prod
+const addText = 'https://sendtextanywhere.com/addtext';
+const getText = 'https://sendtextanywhere.com/gettext';
+
 
 const Home = () => {
 
@@ -29,7 +37,7 @@ const Home = () => {
 
     // Send the data using fetch
     try {
-      const response = await fetch('http://localhost:3001/addtext', {
+      const response = await fetch(addText, {
         method: 'POST', // Set the method to POST
         headers: {
           'Content-Type': 'application/json' // Specify the content type as JSON
@@ -67,7 +75,7 @@ const Home = () => {
 
     // Send the data using fetch
     try {
-      const response = await fetch('http://localhost:3001/gettext', {
+      const response = await fetch(getText, {
         method: 'POST', // Set the method to POST
         headers: {
           'Content-Type': 'application/json' // Specify the content type as JSON

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+// const addfeedback = 'http://localhost:3001/addfeedback';
+
+const addfeedback = 'https://sendtextanywhere.com/addfeedback';
+
+
 const ContectUs = () => {
 
   const [name, setName] = useState(''); // State for name
@@ -36,7 +41,7 @@ const ContectUs = () => {
   
       // Send the data using fetch
       try {
-        const response = await fetch('http://localhost:3001/addfeedback', {
+        const response = await fetch(addfeedback, {
           method: 'POST', // Set the method to POST
           headers: {
             'Content-Type': 'application/json' // Specify the content type as JSON

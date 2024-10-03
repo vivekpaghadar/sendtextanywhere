@@ -13,10 +13,10 @@ function App() {
         <Headers theme="light" />
         <div className="container my-4">
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/contect" element={<ContectUs />} />
-                <Route path="/livechat" element={<LiveChat />} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/about" element={<AboutUs/>} />
+                <Route path="/contect" element={<ContectUs/>} />
+                <Route path="/livechat" element={<LiveChat/>} />
             </Routes>
         </div>
     </div>
