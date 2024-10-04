@@ -14,13 +14,13 @@ const path = require("path");
 // Middleware
 // To allow cross-origin requests from React frontend
 app.use(express.json()); // To parse JSON body in POST requests
-const _dirname = path.dirname("")
-const buildpath = path.join(_dirname,"../frontend/build")
+const _dirname = path.dirname("");
+const buildpath = path.join(_dirname, "../frontend/build");
 app.use(express.static(buildpath));
-app.use(cors()); 
+app.use(cors());
 
 // Connection URI
-const uri = 'mongodb+srv://vivekpaghadar14:Vivek5105@sendtextanywhere.bvuwz.mongodb.net/?retryWrites=true&w=majority&appName=sendtextanywhere';
+const uri = 'mongodb+srv://vivek_user:Vivek5105@sendtextanywhere.bvuwz.mongodb.net/?retryWrites=true&w=majority&appName=sendtextanywhere';
 
 // const uri = 'mongodb://localhost:27017';
 
@@ -28,11 +28,11 @@ const uri = 'mongodb+srv://vivekpaghadar14:Vivek5105@sendtextanywhere.bvuwz.mong
 // const client = new MongoClient(uri);
 const client = new MongoClient(uri, {
     serverApi: {
-      version: ServerApiVersion.v1,
-      strict: true,
-      deprecationErrors: true,
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
     }
-  });
+});
 
 // POST methode
 app.get("/", (req, res) => {
@@ -49,10 +49,10 @@ app.post("/addtext", async (req, res) => {
         //console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
         // Select a database (will be created if it doesn't exist)
-        const database = client.db('artista');
+        const database = client.db('sendtextanywheredatabase');
 
         // Select a collection (will be created if it doesn't exist)
-        const collection = database.collection('text');
+        const collection = database.collection('messages');
 
         let Code = Math.floor(1000 + Math.random() * 9000)
 
@@ -80,19 +80,19 @@ app.post("/gettext", async (req, res) => {
         await client.connect();
 
         // Select a database (will be created if it doesn't exist)
-        const database = client.db('artista');
+        const database = client.db('sendtextanywheredatabase');
 
         // Select a collection (will be created if it doesn't exist)
-        const collection = database.collection('text');
+        const collection = database.collection('messages');
         let code = parseInt(data.code);
 
         if (data.code != "") {
             // Find and log documents from the collection
             const docs = await collection.find({ "code": code }).toArray();
-            if(docs.length > 0){
+            if (docs.length > 0) {
                 if (docs[0].status === 1) {
                     const decryptedString = cryptr.decrypt(docs[0].message);
-                    let response = { "success": 200, "text": decryptedString};
+                    let response = { "success": 200, "text": decryptedString };
                     res.json(response);
                     await collection.updateOne({ code: code }, { $set: { status: 0 } });
                     await collection.deleteOne({ code: code, status: 0 });
@@ -100,11 +100,11 @@ app.post("/gettext", async (req, res) => {
                     let response = { "success": 402, "text": "Error occured" };
                     res.json(response);
                 }
-            }else{
+            } else {
                 let response = { "success": 402, "text": "Error occured" };
-                    res.json(response);
+                res.json(response);
             }
-            
+
         } else {
             let response = { "success": 402, "text": "Please Enter Code ?" };
             res.json(response);
@@ -124,7 +124,7 @@ app.post("/addfeedback", async (req, res) => {
         await client.connect();
 
         // Select a database (will be created if it doesn't exist)
-        const database = client.db('artista');
+        const database = client.db('sendtextanywheredatabase');
 
         // Select a collection (will be created if it doesn't exist)
         const collection = database.collection('feedback');
@@ -136,7 +136,7 @@ app.post("/addfeedback", async (req, res) => {
             note: data.note
         });
 
-        let response = { "success": 200, "lastInsertID": docs.insertedId};
+        let response = { "success": 200, "lastInsertID": docs.insertedId };
         res.json(response);
     } finally {
         // Ensure the client is closed when finished
