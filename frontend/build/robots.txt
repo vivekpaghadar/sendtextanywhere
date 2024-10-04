@@ -1,3 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /node_modules/
+Disallow: /build/
+Disallow: /scripts/
+Disallow: /src/
+Allow: /
