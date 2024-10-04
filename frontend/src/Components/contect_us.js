@@ -72,43 +72,70 @@ const ContectUs = () => {
   return (
     <div>
       <div className='row d-flex justify-content-center align-items-center'>
-        <div className='col-4 mb-2'>
+        <div className='col-lg-4 col-md-6 col-sm-12 mb-2'>
           <div className='Textarea-Edit2'>
             <form id='Form-addText'>
               <div>
-                <textarea spellCheck={false} className="form-control" id="Name" name='name' rows="1" placeholder='Enter your name' onChange={handleNameChange}
-                  value={name} ></textarea>
+                <textarea
+                  spellCheck={false}
+                  className="form-control"
+                  id="Name"
+                  name='name'
+                  rows="1"
+                  placeholder='Enter your name'
+                  onChange={handleNameChange}
+                  value={name}
+                ></textarea>
               </div>
             </form>
           </div>
         </div>
       </div>
+
       <div className='row d-flex justify-content-center align-items-center'>
-        <div className='col-4 mb-2'>
+        <div className='col-lg-4 col-md-6 col-sm-12 mb-2'>
           <div className='Textarea-Edit2'>
             <form id='Form-addText'>
               <div>
-                <textarea spellCheck={false} className="form-control" id="Number" name='phone' rows="1" placeholder='Enter your phone' onChange={handlePhoneChange}
-                  value={phone} ></textarea>
+                <textarea
+                  spellCheck={false}
+                  className="form-control"
+                  id="Number"
+                  name='phone'
+                  rows="1"
+                  placeholder='Enter your phone'
+                  onChange={handlePhoneChange}
+                  value={phone}
+                ></textarea>
               </div>
             </form>
           </div>
         </div>
       </div>
+
       <div className='row d-flex justify-content-center align-items-center'>
-        <div className='col-4 mb-4'>
+        <div className='col-lg-4 col-md-6 col-sm-12 mb-4'>
           <div className='Textarea-Edit2'>
             <form id='Form-addText'>
               <div className='mb-3'>
-                <textarea spellCheck={false} className="form-control" id="text" name='note' rows="8" placeholder='Write Feedback' onChange={handleNoteChange}
-                  value={note} ></textarea>
+                <textarea
+                  spellCheck={false}
+                  className="form-control"
+                  id="text"
+                  name='note'
+                  rows="8"
+                  placeholder='Write Feedback'
+                  onChange={handleNoteChange}
+                  value={note}
+                ></textarea>
               </div>
             </form>
           </div>
         </div>
       </div>
+
       <div className="d-flex justify-content-center">
-        <button onClick={handleSend} type="submit" className="btn btn-danger col-2" disabled={loading}>
+        <button onClick={handleSend} type="submit" className="btn btn-danger col-lg-2 col-md-3 col-sm-6" disabled={loading}>
           {loading ? (
             <div className="spinner-border spinner-border-sm" role="status">
               <span className="sr-only">Loading...</span>
@@ -118,10 +145,62 @@ const ContectUs = () => {
               Submit
             </>
           )}
-          
         </button>
       </div>
     </div>
+
+    // <div>
+    //   <div className='row d-flex justify-content-center align-items-center'>
+    //     <div className='col-4 mb-2'>
+    //       <div className='Textarea-Edit2'>
+    //         <form id='Form-addText'>
+    //           <div>
+    //             <textarea spellCheck={false} className="form-control" id="Name" name='name' rows="1" placeholder='Enter your name' onChange={handleNameChange}
+    //               value={name} ></textarea>
+    //           </div>
+    //         </form>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className='row d-flex justify-content-center align-items-center'>
+    //     <div className='col-4 mb-2'>
+    //       <div className='Textarea-Edit2'>
+    //         <form id='Form-addText'>
+    //           <div>
+    //             <textarea spellCheck={false} className="form-control" id="Number" name='phone' rows="1" placeholder='Enter your phone' onChange={handlePhoneChange}
+    //               value={phone} ></textarea>
+    //           </div>
+    //         </form>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className='row d-flex justify-content-center align-items-center'>
+    //     <div className='col-4 mb-4'>
+    //       <div className='Textarea-Edit2'>
+    //         <form id='Form-addText'>
+    //           <div className='mb-3'>
+    //             <textarea spellCheck={false} className="form-control" id="text" name='note' rows="8" placeholder='Write Feedback' onChange={handleNoteChange}
+    //               value={note} ></textarea>
+    //           </div>
+    //         </form>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className="d-flex justify-content-center">
+    //     <button onClick={handleSend} type="submit" className="btn btn-danger col-2" disabled={loading}>
+    //       {loading ? (
+    //         <div className="spinner-border spinner-border-sm" role="status">
+    //           <span className="sr-only">Loading...</span>
+    //         </div>
+    //       ) : (
+    //         <>
+    //           Submit
+    //         </>
+    //       )}
+
+    //     </button>
+    //   </div>
+    // </div>
   );
 };
 

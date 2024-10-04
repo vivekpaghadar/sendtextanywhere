@@ -85,8 +85,8 @@ body {
 
 .profile-photo {
   border-radius: 50%; /* Make the image circular */
-  width: 100px; /* Set width */
-  height: 100px; /* Set height */
+  width: 80px; /* Set width */
+  height: 80px; /* Set height */
   object-fit: cover; /* Ensure the image covers the entire circle */
   border: 2px solid #ccc; /* Optional: add a border for better visibility */
   margin-bottom: 10px; /* Space between photo and text */

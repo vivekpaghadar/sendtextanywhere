@@ -5,6 +5,7 @@ import ContectUs from './Components/contect_us';
 import LiveChat from './Components/livechat';
 import Home from './Components/home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Privacy from './Components/privacy';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/about" element={<AboutUs/>} />
+                <Route path="/privacy" element={<Privacy/>} />
                 <Route path="/contect" element={<ContectUs/>} />
                 <Route path="/livechat" element={<LiveChat/>} />
             </Routes>
