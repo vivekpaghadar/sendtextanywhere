@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.38226cc8.css",
-    "main.js": "/static/js/main.8f0c2f06.js",
+    "main.js": "/static/js/main.44a248bb.js",
     "static/js/453.a386761d.chunk.js": "/static/js/453.a386761d.chunk.js",
     "static/media/vivek.jpg": "/static/media/vivek.1ebed2ea86790f437c2b.jpg",
     "index.html": "/index.html",
     "main.38226cc8.css.map": "/static/css/main.38226cc8.css.map",
-    "main.8f0c2f06.js.map": "/static/js/main.8f0c2f06.js.map",
+    "main.44a248bb.js.map": "/static/js/main.44a248bb.js.map",
     "453.a386761d.chunk.js.map": "/static/js/453.a386761d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.38226cc8.css",
-    "static/js/main.8f0c2f06.js"
+    "static/js/main.44a248bb.js"
   ]
 }
