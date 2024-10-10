@@ -64,10 +64,13 @@ app.post("/addtext", async (req, res) => {
             message: encryptedString,
             status: 1
         });
-
+        console.log(docs);
         let response = { "success": 200, "lastInsertID": docs.insertedId, "code": Code, "text": data.message };
         res.json(response);
+    }catch(e){
+        console.log(e);
     } finally {
+        
         // Ensure the client is closed when finished
         await client.close();
     }

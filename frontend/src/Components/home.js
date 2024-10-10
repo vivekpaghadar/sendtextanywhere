@@ -4,6 +4,8 @@ import { Tooltip as ReactTooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css';
 import send2 from '../send2.png';
 
+
+
 //localhost
 // const addText = 'http://localhost:3001/addtext';
 // const getText = 'http://localhost:3001/gettext';
@@ -21,7 +23,6 @@ const Home = () => {
   const [ViewType, setViewType] = useState(1);
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
-
 
 
   const FromSend = async (event) => {
@@ -166,16 +167,18 @@ const Home = () => {
                       Once used, it will no longer be valid
                     </ReactTooltip>
                   </div>
-                  <div className='text-center mb-3'>
+                  <div className='text-center mb-1'>
                     <h1>{Code}</h1>
-                    <div className='mt-4'>
+                    {/* <div className='mt-4'>
                       <QRCode
                         size={256}
                         style={{ height: "auto", maxWidth: "100%", width: "50%" }}
                         value={netText}
+                        level='L'
+                        version='10'
                         viewBox={`0 0 256 256`}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </form>
               </div>
