@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import QRCode from "react-qr-code";
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css';
 import send2 from '../send2.png';
@@ -169,16 +168,6 @@ const Home = () => {
                   </div>
                   <div className='text-center mb-1'>
                     <h1>{Code}</h1>
-                    {/* <div className='mt-4'>
-                      <QRCode
-                        size={256}
-                        style={{ height: "auto", maxWidth: "100%", width: "50%" }}
-                        value={netText}
-                        level='L'
-                        version='10'
-                        viewBox={`0 0 256 256`}
-                      />
-                    </div> */}
                   </div>
                 </form>
               </div>
