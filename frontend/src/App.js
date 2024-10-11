@@ -10,19 +10,24 @@ import Privacy from './Components/privacy';
 function App() {
   return (
     <Router>
-    <div className="App">
+      <div className="App">
         <Headers theme="light" />
         <div className="container my-4">
-            <Routes>
-                <Route path="/" element={<Home/>} />
-                <Route path="/about" element={<AboutUs/>} />
-                <Route path="/privacy" element={<Privacy/>} />
-                <Route path="/contect" element={<ContectUs/>} />
-                <Route path="/livechat" element={<LiveChat/>} />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/contect" element={<ContectUs />} />
+            <Route path="/livechat" element={<LiveChat />} />
+          </Routes>
         </div>
-    </div>
-</Router>
+        <footer className="footer mt-auto py-3 bg-light">
+          <div className="container">
+            <span className="text-muted">© 2024 SendTextAnywhere. All rights reserved.</span>
+          </div>
+        </footer>
+      </div>
+    </Router>
   );
 }
 

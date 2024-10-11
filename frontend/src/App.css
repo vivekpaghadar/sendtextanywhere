@@ -3,6 +3,33 @@
   padding: 0;
 }
 
+
+/* App.css */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1; /* This will take up all the remaining space */
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+
+
 body {
   background: #f2dce2 !important;
   font-family: 'Open Sans' !important;

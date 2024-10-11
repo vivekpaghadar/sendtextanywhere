@@ -116,8 +116,11 @@ const Home = () => {
     setText(e.target.value);
   }
 
-  const handleReply = (event) => {
+  const handleBack = (event) => {
     event.preventDefault();
+    setText("")
+    setViewType(1) // 3 for result code
+    document.getElementById('Form-getText').reset();
   }
 
   const handleDownload = (event) => {
@@ -142,12 +145,16 @@ const Home = () => {
     <div className="App ms-3">
       <div className="container my-4">
         {ViewType === 2 && (
-
           <div className='row my-5'>
             <div className='col-lg-3 col-md-6 col-sm-12'>
               <div className='Textarea-Edit'>
+              <button type="button" className="btn btn-link p-0 mb-3" onClick={handleBack}>
+                      <i className="fa-solid fa-arrow-left" style={{ fontSize: '1.5rem', color: '#17a2b8' }}></i>
+                    </button>
                 <form id='Form-addText' onSubmit={FromSend}>
                   <div className='d-flex justify-content-between align-items-center mb-3'>
+                    {/* Back Button */}
+                   
                     <p className='mb-0'>Enter the 4-digit code on the receiving device</p>
                     <i
                       className="fa-solid fa-circle-info"
@@ -173,6 +180,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+
 
 
           // <div className='row my-5'>
@@ -299,6 +307,10 @@ const Home = () => {
           <div className='row'>
             <div className='col-lg-7 col-md-8 col-sm-12'>
               <div className='Textarea-Edit'>
+              <button type="button" className="btn btn-link p-0 mb-1" onClick={handleBack}>
+                      <i className="fa-solid fa-arrow-left" style={{ fontSize: '1.5rem', color: '#17a2b8' }}></i>
+                    </button>
+                    <hr className="mb-4" />
                 <div className="mb-3">
                   <textarea
                     spellCheck={false}
