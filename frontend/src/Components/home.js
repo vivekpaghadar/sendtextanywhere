@@ -10,8 +10,11 @@ import send2 from '../send2.png';
 // const getText = 'http://localhost:3001/gettext';
 
 //prod
-const addText = 'https://sendtextanywhere.com/addtext';
-const getText = 'https://sendtextanywhere.com/gettext';
+// const addText = 'https://sendtextanywhere.com/addtext';
+// const getText = 'https://sendtextanywhere.com/gettext';
+
+const addText = 'https://sendtextanywhere.onrender.com/addtext';
+const getText = 'https://sendtextanywhere.onrender.com/gettext';
 
 
 const Home = () => {
