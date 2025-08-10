@@ -14,8 +14,11 @@ import bankQR from '../vivek_qr.png';
 // const getText = 'http://localhost:3001/gettext';
 
 //prod
-const addText = 'https://sendtextanywhere.com/addtext';
-const getText = 'https://sendtextanywhere.com/gettext';
+// const addText = 'https://sendtextanywhere.com/addtext';
+// const getText = 'https://sendtextanywhere.com/gettext';
+
+const addText = 'https://sendtextanywhere.vercel.app/addtext';
+const getText = 'https://sendtextanywhere.vercel.app/gettext';
 
 
 const Home = () => {
