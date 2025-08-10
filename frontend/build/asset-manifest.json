@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.a794821f.css",
-    "main.js": "/static/js/main.071254ec.js",
+    "main.js": "/static/js/main.2a72b9cc.js",
     "static/js/453.a386761d.chunk.js": "/static/js/453.a386761d.chunk.js",
     "static/media/vivek.jpg": "/static/media/vivek.1ebed2ea86790f437c2b.jpg",
-    "static/media/red-button.png": "/static/media/red-button.118c33c629090686ffaf.png",
+    "static/media/redbutton.png": "/static/media/redbutton.118c33c629090686ffaf.png",
+    "static/media/vivek_qr.png": "/static/media/vivek_qr.0524729c4e018b6fb79e.png",
     "index.html": "/index.html",
     "main.a794821f.css.map": "/static/css/main.a794821f.css.map",
-    "main.071254ec.js.map": "/static/js/main.071254ec.js.map",
+    "main.2a72b9cc.js.map": "/static/js/main.2a72b9cc.js.map",
     "453.a386761d.chunk.js.map": "/static/js/453.a386761d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a794821f.css",
-    "static/js/main.071254ec.js"
+    "static/js/main.2a72b9cc.js"
   ]
 }
