@@ -23,7 +23,7 @@ export default function Header(props) {
                                 <Link className="nav-link" to="/privacy">Privacy</Link>
                             </li>
                             <li className="nav-item fs-8 ms-3">
-                                <Link className="nav-link" to="/contect">Contect Us</Link>
+                                <Link className="nav-link" to="/contect">Contact Us</Link>
                             </li>
                         </ul>
                         <ul className="navbar-nav mb-2 mb-lg-0">
